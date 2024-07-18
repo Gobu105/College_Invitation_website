@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Annual Function Invitation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #89ddf4, #287e9f, #00a2aa);
+            background-repeat : no-repeat;
+            background-attachment: fixed;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header {
+            background-color: #2a5bb6b0; /* Dark Brown */
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            color: #fff;
+            animation: floatHeader 1s infinite alternate-reverse;
+        }
+
+        h2,h3 {
+            color: #fff; 
+            font-family: "Lucida Console", Monaco, monospace;
+            font-weight: bold;
+        }
+
+        .logo-container {
+            margin-top: 50px;
+        }
+
+        img {
+            width: 350px; /* Adjust the size as needed */
+        }
+        
+        p {
+            color: #000000;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-style: italic;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px auto;
+            max-width: 600px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        fieldset {
+            flex: 1;
+            margin: 0 10px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #1ebfce; /* Lightest Shade */
+            margin-bottom: 10px;
+            border: 2px solid #000000;
+            text-align: left; /* Align text within the fieldset to the left */
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #030202;
+        }
+
+        .decorative-line {
+            height: 2px;
+            width: 100%;
+            background-color: #000000;
+            margin: 20px auto;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        button {
+            background-color: #0d3196; /* Red Maroon */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        button:hover {
+            background-color: #800000; /* Slightly darker shade of Red Maroon */
+        }
+
+        
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            from, 20%, 40%, 60%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transform: translate3d(0, 0, 0);
+            }
+
+            40%, 60% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -30px, 0);
+            }
+
+            80% {
+                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+                transform: translate3d(0, -15px, 0);
+            }
+
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes floatHeader {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .info-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-aspect-ratio: 8/16) {
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+        }
+        #sparkle-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ffc916;
+            border-radius: 100%;
+            animation: sparkle-fall 10s ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes sparkle-fall {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+
+    <script>
+        function submitRSVP() {
+            var response = prompt("Will you be attending the College Annual Function? (Yes/No)");
+
+            if (response !== null && response !== "") {
+                alert("Thank you for your Response! We look forward to seeing you at the event.");
+            } else {
+                alert("Your Response has been canceled. If you change your mind, feel free to response again.");
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            createSparkles();
+        });
+
+        function createSparkles() {
+            const sparkleContainer = document.getElementById('sparkle-container');
+
+            for (let i = 0; i < 100; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = `${Math.random() * 100}vw`;
+                sparkle.style.top = `${Math.random() * 100}vh`;
+
+                sparkleContainer.appendChild(sparkle);
+            }
+        }
+    </script>
+</head>
+<body>
+	<div id="sparkle-container"></div>
+    <header>
+        <div class="logo-container">
+             <img src="https://moderncollegepune.edu.in/wp-content/uploads/2023/12/logo.png">
+        </div>
+        <h3>Sy.BSc_Computer_Science(A)<h3>
+        <h2>Invite's You to College Annual Function.</h2>
+    </header>
+    <p>Dear Teachers,</p>
+    <p>We are thrilled to invite you to our College Annual Function, where we celebrate achievements, showcase talents, and foster a sense of community.</p>
+
+    <div class="info-container">
+        <fieldset>
+            <legend>Venue</legend>
+            <p><strong>Date:</strong> 30-01-2024 </p>
+            <p><strong>Time:</strong> 10:00-12:30 </p>
+            <p style="font: italic;"><strong>Location:</strong> Main Building , 3rd floor , Classroom :- 308</p>
+        </fieldset>
+    </div>
+
+    <p>Your presence will make this event truly special.</p>
+
+    <button onclick="submitRSVP()">Click Now</button>
+
+    <div class="decorative-line"></div>
+</body>
+</html>
