@@ -10,23 +10,21 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #89ddf4, #287e9f, #00a2aa);
-            background-repeat : no-repeat;
-            background-attachment: fixed;
+            background: linear-gradient(to bottom, #feadad, #56c7c5, #5d9f45);
             animation: fadeIn 2s ease-in-out;
         }
 
         header {
-            background-color: #2a5bb6b0; /* Dark Brown */
+            background-color: #1c99ffb0; 
             padding: 20px;
             border-radius: 10px 10px 0 0;
-            color: #fff;
+            color: #000000;
             animation: floatHeader 1s infinite alternate-reverse;
         }
 
-        h2,h3 {
-            color: #fff; 
-            font-family: "Lucida Console", Monaco, monospace;
+        h1 {
+            color: #000000; 
+            font-family: 'Georgia', serif;
             font-weight: bold;
         }
 
@@ -60,7 +58,7 @@
             margin: 0 10px;
             padding: 15px;
             border-radius: 8px;
-            background-color: #1ebfce; /* Lightest Shade */
+            background-color: #acff3e; /* Lightest Shade */
             margin-bottom: 10px;
             border: 2px solid #000000;
             text-align: left; /* Align text within the fieldset to the left */
@@ -81,8 +79,8 @@
         }
 
         button {
-            background-color: #0d3196; /* Red Maroon */
-            color: #fff;
+            background-color: #00b7ff; /* Red Maroon */
+            color: #000000;
             padding: 10px 20px;
             font-size: 16px;
             border: none;
@@ -174,6 +172,29 @@
                 height: 100vh;
             }
         }
+    </style>
+
+    <script>
+        function submitRSVP() {
+            var response = prompt("Will you be attending the College Annual Function? (Yes/No)");
+
+            if (response !== null && response !== "") {
+                alert("Thank you for your Response! We look forward to seeing you at the event.");
+            } else {
+                alert("Your Response has been canceled. If you change your mind, feel free to response again.");
+            }
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
         #sparkle-container {
             position: absolute;
             width: 100%;
@@ -196,23 +217,50 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+            10% {
+                opacity: 0.9;
+                transform: translateY(10vh);
+            }
+            20% {
+                opacity: 0.8;
+                transform: translateY(20vh);
+            }
+            30% {
+                opacity: 0.7;
+                transform: translateY(30vh);
+            }
+            40% {
+                opacity: 0.6;
+                transform: translateY(40vh);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(50vh);
+            }
+            60% {
+                opacity: 0.4;
+                transform: translateY(60vh);
+            }
+            70% {
+                opacity: 0.3;
+                transform: translateY(70vh);
+            }
+            80% {
+                opacity: 0.2;
+                transform: translateY(80vh);
+            }
+            90% {
+                opacity: 0.1;
+                transform: translateY(90vh);
+            }
             100% {
                 opacity: 0;
                 transform: translateY(100vh);
             }
         }
+
     </style>
-
     <script>
-        function submitRSVP() {
-            var response = prompt("Will you be attending the College Annual Function? (Yes/No)");
-
-            if (response !== null && response !== "") {
-                alert("Thank you for your Response! We look forward to seeing you at the event.");
-            } else {
-                alert("Your Response has been canceled. If you change your mind, feel free to response again.");
-            }
-        }
         document.addEventListener('DOMContentLoaded', function () {
             createSparkles();
         });
@@ -232,13 +280,12 @@
     </script>
 </head>
 <body>
-	<div id="sparkle-container"></div>
+    <div id="sparkle-container">
     <header>
         <div class="logo-container">
              <img src="https://moderncollegepune.edu.in/wp-content/uploads/2023/12/logo.png">
         </div>
-        <h3>Sy.BSc_Computer_Science(A)<h3>
-        <h2>Invite's You to College Annual Function.</h2>
+        <h1>Invitation to College Annual Function</h1>
     </header>
     <p>Dear Teachers,</p>
     <p>We are thrilled to invite you to our College Annual Function, where we celebrate achievements, showcase talents, and foster a sense of community.</p>
@@ -246,16 +293,17 @@
     <div class="info-container">
         <fieldset>
             <legend>Venue</legend>
-            <p><strong>Date:</strong> 30-01-2024 </p>
-            <p><strong>Time:</strong> 10:00-12:30 </p>
-            <p style="font: italic;"><strong>Location:</strong> Main Building , 3rd floor , Classroom :- 308</p>
+            <p><strong>Date:</strong> 22-01-2025 </p>
+            <p><strong>Time:</strong> 2:00-4:00 </p>
+            <p><strong>Location:</strong> Main Building , 4th floor , classroom :- 427</p>
         </fieldset>
     </div>
 
     <p>Your presence will make this event truly special.</p>
 
-    <button onclick="submitRSVP()">Click Now</button>
+    <button onclick="submitRSVP()">Have a Visit.</button>
 
     <div class="decorative-line"></div>
+</div>
 </body>
 </html>
